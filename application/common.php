@@ -18,8 +18,8 @@
 //发送http请求访问去URL
 function curl_get($url,$httpCode = 0){
     $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL,$url);
-    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch,CURLOPT_URL,$url);//需要获取的URL地址
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);//将curl_exec()获取的信息以文件流的形式返回，而不是直接输出
     //不做证书校验，部署在Linux环境下请改为true
     curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
     curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,10);
